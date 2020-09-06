@@ -1,0 +1,15 @@
+mutation create($survey_id: String!, $question: String!) {
+  model_create(
+    model: {
+      model_schema_name: "item"
+      properties: [
+        { name: "survey_id", value: $survey_id }
+        { name: "question", value: $question }
+      ]
+    }
+  ) {
+    id
+    survey_id: property(name: "survey_id")
+    question: property(name: "question")
+  }
+}

@@ -1,0 +1,20 @@
+{% graphql result = 'survey/create', title: "COVID Screening Questionnaire" %}
+{% assign survey = result | fetch: "model_create" %}
+
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Do you have any of the symptoms or signs? 
+New or worsening cough" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Shortness of breath" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Sore throat" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Runny nose, sneezing or nasal congestion (in absence of underlying reasons for symptoms such as seasonal allergies and post nasal drip)" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Hoarse voice" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Difficulty swallowing" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "New smell or taste disorder(s)" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Nausea/vomiting, diarrhea, abdominal pain" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Unexplained fatigue/malaise" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Chills" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Headache" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Have you travelled outside of Canada or had close contact with anyone that has travelled outside of Canada in the past 14 days?" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Do you have a fever?" %}
+{% graphql result = 'questions/create', survey_id: survey.id, question: "Have you had close contact with anyone with respiratory illness or a confirmed or probable case of COVID-19?" %}
+
+<script>window.location.href = '/questionnaire/show/{{ survey.id }}';</script> 

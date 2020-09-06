@@ -1,0 +1,8 @@
+mutation notify($data: HashObject) {
+  email_send(template: { name: "send_email" }, data: $data) {
+    errors {
+      message
+    }
+    is_scheduled_to_send
+  }
+}

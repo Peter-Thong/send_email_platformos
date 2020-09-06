@@ -1,0 +1,8 @@
+name: item
+properties:
+  - name: survey_id
+    type: string
+  - name: question
+    type: string
+  - name: answer
+    type: string

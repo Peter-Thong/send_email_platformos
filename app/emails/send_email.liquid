@@ -1,0 +1,16 @@
+---
+to: '{{ data.email }}'
+delay: 0
+enabled: true
+trigger_condition: true
+from: no-reply@example.com
+reply_to: no-reply@example.com
+cc:
+bcc:
+subject: 'Welcome in our marketplace!'
+layout_path: mailer
+---
+<h2>your appointment in saloneverywhere is comming<h2>
+
+<h3>please completed this Questionnaire for safety<h3>
+<p><a href="https://{{ context.location.host }}/questionnaire/create">Click here</a><p>

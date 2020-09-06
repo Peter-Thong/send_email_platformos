@@ -1,0 +1,13 @@
+---
+method: post
+---
+
+{% parse_json data %}
+{
+  "email": "{{ context.params.email }}"
+}
+{% endparse_json %}
+
+{% graphql notify = 'emails/send_email', data: data %}
+
+<script>window.location.href = '/';</script>

@@ -1,0 +1,8 @@
+mutation update($id: ID!, $answer: String!) {
+  model_update(
+    id: $id
+    model: { properties: [{ name: "answer", value: $answer }] }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,14 @@
+---
+method: post
+---
+
+{% for ele in context.params %}
+    {% if ele[0] contains '-' %}
+        {% assign question-update = ele[0] | split: "-" %}
+        {% assign answer= ele[1] %}
+        {% assign question_id= question-update[1] %}
+        {% graphql result = 'questions/update_answer', id: question_id, answer: answer %}
+    {% endif %}
+{% endfor %}
+
+<script>window.location.href = '/questionnaire/thank_you';</script> 

@@ -1,0 +1,240 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 16px;
+  line-height: 24px;
+  --border-radius: 4px;
+  --header-color: #1c1d1c;
+  --input-color: #444;
+  --placeholder-color: #aaa;
+  --base-color: #373837;
+  --primary-color: rgb(203, 35, 36);
+  --base-color-dark: rgb(36, 36, 36);
+  --primary-color-dark: rgb(173, 31, 35);
+  --light-text-color: #888;
+  --input-color-dark: #f3f4f3;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--base-color);
+  font-size: 1rem;
+  line-height: 1.3145rem;
+  font-weight: 400;
+  background: #fefefe;
+}
+
+.send-email {
+  height: 100vh;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(203, 35, 36, 0.3),
+      rgba(173, 31, 35, 0.5)
+    ),
+    url("../images/hero-image-2.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.send-email--form {
+  position: absolute;
+  height: 40vh;
+  width: 60vw;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--border-radius);
+  box-shadow: 5px 10px 15px var(--base-color-dark);
+  text-align: center;
+}
+
+.thank {
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0px;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.17948718em;
+  margin: 25px;
+}
+
+h2 {
+  font-size: 28px;
+  padding: 30px;
+  margin-bottom: 25px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.form__input {
+  font-size: 1rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: rgba(230, 230, 230, 0.9);
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid #55c57a;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.form__label {
+  font-size: 1rem;
+  color: #999;
+  font-weight: 700;
+  margin-right: 7rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.btn-inline {
+  margin-top: 20px;
+  color: #fefefe;
+  font-size: inherit;
+  display: inline-block;
+  border: none;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-inline span {
+  margin-left: 3px;
+  transition: margin-left 0.2s;
+}
+
+.btn-inline:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn-inline:hover span {
+  margin-left: 8px;
+}
+
+.btn-center {
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+
+.questions {
+  background-color: #f5f5f5;
+  color: #777;
+  text-align: center;
+}
+
+.question {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1rem;
+  line-height: 1.2;
+}
+
+.question-form {
+  margin: auto;
+  height: 20vh;
+  width: 60vw;
+  margin: auto;
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.form__radio-group {
+  display: block;
+  margin: 1rem;
+}
+
+.form__radio-input {
+  display: none;
+}
+
+.form__radio-label {
+  font-size: inherit;
+  cursor: pointer;
+  position: relative;
+  padding-left: 2.2rem;
+}
+
+.form__radio-button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1;
+}

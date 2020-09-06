@@ -1,0 +1,19 @@
+query read($id: String!) {
+  models(
+    per_page: 100
+    filter: {
+      model_schema_name: { value: "item" }
+      properties: [
+        { name: "question", exists: true }
+        { name: "survey_id", value: $id }
+      ]
+    }
+    sort: { id: { order: ASC } }
+  ) {
+    results {
+      id
+      question: property(name: "question")
+      survey_id: property(name: "survey_id")
+    }
+  }
+}
